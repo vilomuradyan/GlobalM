@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_grey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_content_history"
+        android:layout_width="match_parent"
+        android:background="@color/color_grey"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/background_item_stream"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        tools:ignore="ContentDescription, UnusedAttribute">
+
+        <ImageView
+            android:id="@+id/image_history"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#272c36"
+            android:background="@drawable/ic_version_background"
+            android:padding="15dp"
+            android:tint="@color/color_green"
+            android:src="@drawable/ic_version" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/text_history_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Version"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textColor="@color/version_name"
+                android:textSize="15sp"
+                android:text="ID: 2019/123456/1"
+                android:id="@+id/text_history_exclusive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_history_name" />
+
+            <TextView
+                android:textColor="#bdbdbd"
+                android:layout_below="@id/text_history_exclusive"
+                android:text="2 days ago"
+                android:id="@+id/text_history_date"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

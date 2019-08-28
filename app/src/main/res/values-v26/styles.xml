@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge" >
+        <item name="android:autofilledHighlight">@android:color/transparent</item>
+        <item name="colorAccent">@color/color_main_blue</item>
+        <item name="colorPrimaryDark">@color/color_main_blue</item>
+    </style>
+
+</resources>

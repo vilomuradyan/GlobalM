@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="4dp"
+    android:padding="2dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/selector_rounded_button_dark_grey"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_user_share_with_individuals"
+            android:layout_marginEnd="4dp"
+            android:padding="6dp"
+            android:background="@drawable/selector_rounded_button_stroke_blue"
+            android:src="@drawable/ic_user_icon_new"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/text_email_share_with_individuals"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="4dp"
+            android:text="sara@Knowlocker.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image_delete_share_with_individuals"
+            android:padding="4dp"
+            android:tint="@color/color_red"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_delete_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

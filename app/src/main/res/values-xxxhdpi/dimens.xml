@@ -1,0 +1,18 @@
+<resources>
+
+    <dimen name="item_stream_width">180dp</dimen>
+    <dimen name="item_stream_margin_start_end_top">10dp</dimen>
+    <dimen name="item_stream_layout_top_height">130dp</dimen>
+    <dimen name="item_stream_news_live_text_size">9sp</dimen>
+    <dimen name="item_stream_title_text_size">17sp</dimen>
+    <dimen name="item_stream_date_text_size">10sp</dimen>
+    <dimen name="item_stream_title_margin_top">30dp</dimen>
+    <dimen name="item_stream_contact_image_padding">8dp</dimen>
+    <dimen name="item_stream_action_button_width_height">25dp</dimen>
+    <dimen name="button_sign_in_height">50dp</dimen>
+    <dimen name="button_sign_in_padding_top_bottom">12dp</dimen>
+    <dimen name="social_networks_margin_top">30dp</dimen>
+    <dimen name="sign_in_in_progress_bar_size">25dp</dimen>
+    <dimen name="sign_in_under_logo_margin_top">100dp</dimen>
+
+</resources>

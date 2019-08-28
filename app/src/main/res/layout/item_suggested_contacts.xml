@@ -1,0 +1,137 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/item_stream_width"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:layout_marginStart="@dimen/item_stream_margin_start_end_top"
+    android:layout_marginTop="@dimen/item_stream_margin_start_end_top"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@android:color/white"
+    tools:ignore="ContentDescription, UnusedAttribute">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:id="@+id/image_contact"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_rounded_button_stroke_blue"
+            android:padding="15dp"
+            android:src="@drawable/ic_contact_selected" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/text_contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lester Arnold"
+                android:textColor="@android:color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:id="@+id/layout_company"
+                android:layout_below="@id/text_contact_name"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginEnd="3dp"
+                    android:id="@+id/text_contact_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CEO, " />
+
+                <TextView
+                    android:layout_toEndOf="@id/text_contact_position"
+                    android:id="@+id/text_contact_company"
+                    android:text="Company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/text_contact_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/layout_company"
+                android:text="London, UK"
+                android:textColor="@color/color_main_blue" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginEnd="6dp">
+
+
+            <ImageView
+                android:layout_marginEnd="3dp"
+                android:id="@+id/button_message"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_rounded_button_white"
+                android:src="@drawable/ic_write_message" />
+
+            <ImageView
+                android:padding="2dp"
+                android:layout_toEndOf="@id/button_message"
+                android:id="@+id/button_decline"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_rounded_button_white"
+                android:src="@drawable/ic_add_user" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="#edf0f7"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginEnd="3dp"
+                android:id="@+id/text_contact_worked"
+                android:text="Worked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/text_worked"
+                android:textColor="@color/color_main_blue"
+                android:layout_toEndOf="@id/text_contact_worked"
+                android:text="GlobalM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

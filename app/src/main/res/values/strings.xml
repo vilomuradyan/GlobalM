@@ -1,0 +1,147 @@
+<resources>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoicGF1bGNhbGxlamEiLCJhIjoiY2pxemR0OHVvMDM4ODQ1cGtqZWJ6NHdlMiJ9.rGxR9gryk3wk4wxbcBb_Fg</string>
+
+    <string name="application_name">GlobalM</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_content_summary">Content Summary</string>
+    <string name="title_contacts">Contacts</string>
+    <string name="title_channels">Channels</string>
+    <string name="title_assignments">Assignments</string>
+    <string name="title_create_content">Create Content</string>
+    <string name="list_view">List View</string>
+    <string name="map_view">Map View</string>
+    <string name="my_contacts">My Contacts</string>
+    <string name="requests">Requests</string>
+    <string name="pending">Pending</string>
+    <string name="notifications">Notifications</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="create_event">Create Event</string>
+    <string name="upload_content">Upload Content</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in_with_facebook">Sign in with facebook</string>
+    <string name="sign_in_with_linked_in">Sign in with linkedin</string>
+    <string name="sign_in_with_google">Sign in with google</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name_and_surname">Name and surname</string>
+    <string name="i_accept_terms_and_conditions">I accept Terms and Conditions</string>
+    <string name="sign_up_with_facebook">Sign up with facebook</string>
+    <string name="sign_up_with_linked_in">Sign up with linked in</string>
+    <string name="sign_up_with_google">Sign up with google</string>
+    <string name="please_check_your_email">Please check your email account to \nverify your email address</string>
+    <string name="thanks_for_registering">Thanks for registering</string>
+    <string name="select_and_connect_a_social_network">Select and connect a social network via the \nlink below for quicker and easier login.</string>
+    <string name="connect_facebook">Connect facebook</string>
+    <string name="connect_linked_in">Connect linkedin</string>
+    <string name="connect_google">Connect google</string>
+    <string name="connect_twitter">Connect twitter</string>
+    <string name="go_live">Go Live</string>
+    <string name="users">Users</string>
+    <string name="content">Content</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="event">Event</string>
+    <string name="account">Account</string>
+    <string name="technical_preferences">Technical Preferences</string>
+    <string name="news">News</string>
+    <string name="live">Live</string>
+    <string name="full_name">Full Name</string>
+    <string name="primary_email_address">Primary Email Address</string>
+    <string name="upload">Upload</string>
+    <string name="add_new">Add New</string>
+    <string name="cover">Cover</string>
+    <string name="change_cover">Change Cover</string>
+    <string name="biography">Biography</string>
+    <string name="skills">Skills</string>
+    <string name="take_photo">Take photo</string>
+    <string name="search">Search</string>
+    <string name="search_contacts">Search Contacts</string>
+    <string name="search_location">Search Location</string>
+    <string name="sign_in_with_twitter">Sign in with twitter</string>
+    <string name="details">Details</string>
+    <string name="reviews">Reviews</string>
+    <string name="history">History</string>
+    <string name="please_wait">Please Wait…</string>
+    <string name="unable_to_connect_to_camera">Timeout. Unable to connect to camera.</string>
+    <string name="loading_camera_files_list">Loading camera files list</string>
+    <string name="title_is_required">Title is required</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="an_error_has_occured">An error has occurred</string>
+    <string name="sign_up_password_error">Password must contain at least one number, one special character and both uppercase and lowercase letters.</string>
+    <string name="manage_social_logins">Manage Social Logins</string>
+
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="connect"><u>Connect</u></string>
+    <string name="disconnect"><u>Disconnect</u></string>
+
+    <string name="sharing_upload">Upload content</string>
+    <string name="sharing_add_to_sync_folder">Add to Sync folder</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="use_device_camera">Use Device Camera</string>
+    <string name="use_gopro_camera">Use GoPro Camera</string>
+    <string name="failed_to_load_ffmpeg">Failed to load FFmpeg</string>
+    <string name="stream_failed">Stream has failed</string>
+    <string name="failed_to_setup_video_quality">Failed to setup video quality</string>
+    <string name="video_quality_set_to_720p">Video quality is set to 720p</string>
+
+    <string name="permission_rationale">We need these permissions in order for app to work properly</string>
+    <string name="sync_globalm_folder">Sync GlobalM folder</string>
+    <string name="globalm_notification_channel_id" translatable="false">globalM_notification_channel</string>
+    <string name="notification_description">GlobalM Notification</string>
+    <string name="sync_successful">All files are successfully synced</string>
+    <string name="sync_failed">Failed to sync all files</string>
+    <string name="save">Save</string>
+    <string name="select_local">Select Local</string>
+    <string name="skills_hint">Skills ex: Negotiation</string>
+    <string name="select_tags">Select Tags</string>
+    <string name="ok">OK</string>
+    <string name="error_while_adding_skill">Error while adding skill</string>
+    <string name="plan_event">Plan Event</string>
+    <string name="upload_file">Upload File</string>
+    <string name="unable_to_find_location">Unable to find location</string>
+    <string name="rate">Rate</string>
+    <string name="organization">Organization</string>
+    <string name="won">Won</string>
+    <string name="responses">Responses</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="choose_country">Choose a country</string>
+    <string name="city">City</string>
+    <string name="date">Date</string>
+    <string name="respond_by">Respond by</string>
+    <string name="urgent">Urgent</string>
+    <string name="invite_bidders_by_skills">Invite Bidders by skills</string>
+    <string name="location">Location</string>
+    <string name="create_assignment">Create assignment</string>
+    <string name="assignment">Assignment</string>
+
+    <!--Contacts-->
+    <string name="contacts_filter_by_name">By name</string>
+    <string name="contacts_filter_by_skill">Skill</string>
+    <string name="contacts_filter_by_location">Location</string>
+    <string name="contacts_filter_apply">Apply</string>
+    <string name="contacts_nothing_found">No contacts found</string>
+    <string name="contacts_companies_nothing_found">No companies found</string>
+    <string name="contacts_requests_nothing_found">No requests</string>
+    <string name="contacts_clear_filter">Clear filters</string>
+    <string name="no_data_available">No data available</string>
+    <string name="country">Country</string>
+    <string name="add_geofence_to_map">Add Geofence to Map</string>
+    <string name="post_now">Post now</string>
+    <string name="respond">Respond</string>
+    <string name="response">Response</string>
+    <string name="message">Message</string>
+    <string name="send_respond">Send respond</string>
+    <string name="post_to_all_available_journalists_in_the_area">Post to all available journalists in the area</string>
+    <string name="select_from_contacts">Select from contacts</string>
+
+</resources>

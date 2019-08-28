@@ -1,0 +1,196 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/item_stream_margin_start_end_top"
+    android:layout_marginTop="@dimen/item_stream_margin_start_end_top"
+    android:background="@drawable/background_item_stream"
+    android:foreground="?android:attr/selectableItemBackground"
+    tools:ignore="ContentDescription, UnusedAttribute">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_stream_layout_top_height">
+
+        <ImageView
+            android:id="@+id/image_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop"
+            android:src="@drawable/trump" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4A000000" />
+
+        <TextView
+            android:id="@+id/text_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/item_stream_margin_start_end_top"
+            android:layout_marginTop="@dimen/item_stream_margin_start_end_top"
+            android:background="@drawable/background_view_news"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/news"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/item_stream_news_live_text_size" />
+
+        <ImageView
+            android:id="@+id/button_popup_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/item_stream_margin_start_end_top"
+            android:layout_marginEnd="@dimen/item_stream_margin_start_end_top"
+            android:src="@drawable/ic_drop_down"
+            tools:ignore="RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/text_live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/text_tag"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@id/text_tag"
+            android:background="@drawable/background_view_live"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/live"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/item_stream_news_live_text_size"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/text_date"
+            android:layout_below="@id/text_tag"
+            android:layout_marginStart="@dimen/item_stream_margin_start_end_top"
+            android:layout_marginTop="@dimen/item_stream_title_margin_top"
+            android:layout_marginEnd="@dimen/item_stream_margin_start_end_top"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="How the tragedy flkdjsahnflkasda ftsadjfjsa gtksjgk;l fdafdafgfsgsfgfsgfsgfsgfsggsadjkgjsakl;l"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/item_stream_title_text_size" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/item_stream_margin_start_end_top"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="@dimen/item_stream_margin_start_end_top"
+            android:text="18/54/78"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/item_stream_date_text_size" />
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/item_stream_margin_start_end_top"
+            android:layout_marginEnd="@dimen/item_stream_margin_start_end_top"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/item_stream_title_margin_top"
+            android:layout_height="@dimen/item_stream_title_margin_top">
+
+            <ImageView
+                android:background="@drawable/selector_rounded_button_stroke_blue_and_background_grey"
+                android:layout_width="@dimen/item_stream_title_margin_top"
+                android:layout_height="@dimen/item_stream_title_margin_top"
+                android:padding="@dimen/item_stream_contact_image_padding"
+                android:src="@drawable/ic_contact_selected" />
+
+            <ImageView
+                android:id="@+id/image_user"
+                android:layout_width="@dimen/item_stream_title_margin_top"
+                android:layout_height="@dimen/item_stream_title_margin_top"
+                android:padding="1dp" />
+
+        </FrameLayout>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="@dimen/item_stream_margin_start_end_top"
+        android:text="This is description fksdjklffksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhfksdjklfdasklhfljkhdasklhfljkh"
+        android:textColor="#272c36"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_below="@id/text_description"
+        android:id="@+id/divider_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dce3f3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/divider_bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <ImageView
+            android:id="@+id/button_download"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_circle"
+            android:padding="10dp"
+            android:src="@drawable/ic_download" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" />
+
+        <ImageView
+            android:id="@+id/button_message"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_circle"
+            android:padding="10dp"
+            android:src="@drawable/ic_message_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" />
+
+        <ImageView
+            android:id="@+id/button_location"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_circle"
+            android:padding="10dp"
+            android:src="@drawable/ic_location" />
+
+    </LinearLayout>
+
+</RelativeLayout>

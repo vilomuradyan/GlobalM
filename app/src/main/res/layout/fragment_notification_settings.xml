@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grey"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="15dp"
+        android:text="How do you want to be notified:"
+        android:textColor="@color/color_grey_dark"
+        android:textSize="20sp" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkbox_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="By Email"
+        android:textColor="@color/color_grey_dark" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkbox_im"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="By IM"
+        android:textColor="@color/color_grey_dark" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkbox_never"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="Never"
+        android:textColor="@color/color_grey_dark" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="15dp"
+        android:text="Select notification period:"
+        android:textColor="@color/color_grey_dark"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radio_button_immediately"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="Immediately"
+            android:textColor="@color/color_grey_dark" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radio_button_daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="Daily"
+            android:textColor="@color/color_grey_dark" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radio_button_never"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="Never"
+            android:textColor="@color/color_grey_dark" />
+
+    </RadioGroup>
+
+</LinearLayout>

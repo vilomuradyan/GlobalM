@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/selector_rounded_button_dark_grey"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            android:id="@+id/text_tags"
+            android:layout_centerVertical="true"
+            android:text="sara@Kn.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/image_delete_tags"
+            android:padding="4dp"
+            android:tint="@color/color_red"
+            android:src="@drawable/ic_delete_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

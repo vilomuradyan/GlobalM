@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/search_view"
+        layout="@layout/layout_content_search_view" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_below="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_grey">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_my_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/contacts_filter_tv_nothing_found"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contacts_nothing_found"/>
+
+                <Button
+                    android:id="@+id/contacts_filter_btn_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAllCaps="false"
+                    android:text="@string/contacts_clear_filter"
+                    android:textColor="@color/color_main_blue"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:elevation="0dp"
+                    android:background="@null"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/layout_expandable_contact_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_view"
+        android:background="@color/color_white"
+        app:ael_expanded="false"
+        app:ael_interpolator="linear"
+        app:ael_orientation="vertical"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contacts_filter_by_name"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/contacts_filter_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:maxLines="1"
+                android:background="@drawable/selector_rounded_button_stroke_grey"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/contacts_filter_by_skill"/>
+
+            <HorizontalScrollView
+                android:id="@+id/contacts_filter_sv_skills"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:fillViewport="true"
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey">
+
+                <android.support.design.chip.ChipGroup
+                    android:id="@+id/skills_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="true"
+                    app:singleLine="true" />
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/contacts_filter_by_location"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/contacts_filter_et_location"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:maxLines="1"
+                android:background="@drawable/selector_rounded_button_stroke_grey"/>
+
+            <Button
+                android:id="@+id/contacts_filter_btn_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAllCaps="true"
+                android:text="@string/contacts_filter_apply"
+                android:textColor="@color/color_main_blue"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:elevation="0dp"
+                android:background="@null"/>
+
+        </LinearLayout>
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+</RelativeLayout>

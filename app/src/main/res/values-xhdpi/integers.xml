@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="mLayoutCameraButton">240</integer>
+    <integer name="mButtonCapture">180</integer>
+    <integer name="mButtonChangeCamera">100</integer>
+    <integer name="mLayoutIcons">160</integer>
+    <integer name="mButtonSettings">28</integer>
+    <integer name="mButtonStreamingBandwidth">24</integer>
+    <integer name="mButtonCaptureLand">140</integer>
+    <integer name="mLayoutCollection">-120</integer>
+</resources>

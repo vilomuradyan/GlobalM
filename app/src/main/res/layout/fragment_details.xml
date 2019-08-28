@@ -1,0 +1,625 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scroll_view"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/details_date_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="5dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:backgroundTint="#dfdfdf"
+            android:background="@drawable/selector_rounded_button_stroke_for_details_id"
+            android:layout_toEndOf="@id/details_date_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginEnd="8dp"
+                android:textSize="14sp"
+                android:id="@+id/details_id_version"
+                android:textColor="@android:color/black"
+                android:text="ID:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="14sp"
+                android:text="2019/123456/1"
+                android:layout_toEndOf="@id/details_id_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/details_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details_date_news"
+            android:layout_margin="5dp"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/details_video_news"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@id/details_news">
+
+            <ImageView
+                android:id="@+id/details_video"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="240dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/details_pending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_button_orange"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:paddingStart="10dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="2dp"
+                    android:text="@string/pending"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/details_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/background_field_login"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:paddingStart="10dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="2dp"
+                    android:text="9 hours, 23 minutes"
+                    android:textColor="@color/color_light_orange"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/stream_and_downloads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details_video_news"
+            android:background="@color/color_main_blue"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/details_stream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rounded_button_grey"
+                android:drawableEnd="@drawable/ic_settings"
+                android:drawableTint="@color/color_green"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:textColor="@color/color_main_blue"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/details_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_rounded_button_grey"
+                android:drawableEnd="@drawable/ic_settings"
+                android:drawableTint="@color/color_green"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:textColor="@color/color_main_blue"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/details_map"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@id/stream_and_downloads" />
+
+        <RelativeLayout
+            android:background="#f6f6f6"
+            android:id="@+id/layout_group"
+            android:layout_below="@id/details_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/user_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp">
+
+                <FrameLayout
+                    android:id="@+id/details_cycle_image_fl"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/selector_rounded_button_stroke_blue">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_contact_selected" />
+
+                    <ImageView
+                        android:id="@+id/details_cycle_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="1dp"
+                        android:layout_gravity="center" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/details_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/details_cycle_image_fl"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/details_user_job_title"
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/details_user_name"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/details_cycle_image_fl"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/details_user_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/details_user_job_title"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/details_cycle_image_fl"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/image_cycle_message"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/selector_rounded_button_grey"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_message_black" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/details_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/user_layout"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tags"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/details_tv_tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/design_default_color_primary_dark" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_details_tags"
+                android:layout_below="@id/details_tags"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#dce3f3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:id="@+id/details_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_details_tags"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/details_tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_details_status"
+                android:layout_below="@id/details_status"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#dce3f3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:id="@+id/item_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_details_status"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item ID"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/details_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_item_id"
+                android:layout_below="@id/item_id"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#dce3f3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <LinearLayout
+                android:id="@+id/data_shot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_item_id"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data shot"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/details_tv_data_shot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_data_shot"
+                android:layout_below="@id/data_shot"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#dce3f3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <LinearLayout
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_data_shot"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/details_tv_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_country"
+                android:layout_below="@id/country"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#dce3f3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <LinearLayout
+                android:id="@+id/categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_country"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categories"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/color_main_blue"
+                    android:id="@+id/details_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_categories"
+                android:layout_below="@id/categories"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#dce3f3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <LinearLayout
+                android:id="@+id/layout_dope_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_categories"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/dope_sheet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description (Dope sheet)"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Milan Tomic Jack Thorogood I’ve noticed pool used on some other screens too. No issue for me on this but obviously we can change that in revisions later in the wee" />
+
+                <View
+                    android:layout_marginTop="8dp"
+                    android:background="#dce3f3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_shot_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_dope_sheet"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/shot_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shot list"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Milan Tomic Jack Thorogood I’ve noticed pool used on some other screens too. No issue for me on this but obviously we can change that in revisions later in the wee" />
+
+                <View
+                    android:layout_marginTop="8dp"
+                    android:background="#dce3f3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_restriction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_shot_list"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/restrictions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Restriction"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Milan Tomic Jack Thorogood I’ve noticed pool used on some other screens too. No issue for me on this but obviously we can change that in revisions later in the wee" />
+
+                <View
+                    android:layout_marginTop="8dp"
+                    android:background="#dce3f3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/details_copy_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_restriction"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copyright" />
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:text="Other"
+                    android:id="@+id/details_tv_copy_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_layout_group"
+            android:layout_below="@id/layout_group"
+            android:layout_marginBottom="10dp"
+            android:background="@color/color_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_below="@id/view_layout_group"
+            android:id="@+id/details_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="15dp">
+
+            <Button
+                android:id="@+id/button_book_exclusive"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rounded_button_green"
+                android:text="Book Exclusive 200$"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/button_book_pool_access"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_book_exclusive"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_rounded_button_stroke_green"
+                android:text="Book pool Access 100$"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

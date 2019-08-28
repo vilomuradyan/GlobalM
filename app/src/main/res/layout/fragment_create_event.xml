@@ -1,0 +1,1282 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Timezone"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/field_time_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@id/image_location"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/image_time_zone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_down"
+                    android:tint="@color/color_main_blue" />
+
+            </RelativeLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/layout_expandable_timezone_list"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FFFFFF"
+                app:ael_expanded="false"
+                app:ael_interpolator="linear"
+                app:ael_orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_timezone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Name (Slug)"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/field_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent" />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/text_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Subtitle (Lead)"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/field_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layout_upload_device"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#f1f1f1">
+
+                <TextView
+                    android:id="@+id/text_pre_recorded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Pre-recorded Event?" />
+
+                <TextView
+                    android:id="@+id/button_upload_file"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_pre_recorded"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/selector_rounded_button_green"
+                    android:gravity="center"
+                    android:paddingStart="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:text="Upload File"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/clear_upload_files"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_clear"
+                android:visibility="gone" />
+
+
+            <VideoView
+                android:id="@+id/plan_video_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/text_share_with"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Share with individuals"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:minHeight="40dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_share_with_individuals_with_icons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <EditText
+                    android:id="@+id/field_share_with_individuals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:maxLength="30" />
+
+            </RelativeLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/layout_expandable_share_with_individuals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                app:ael_expanded="false"
+                app:ael_interpolator="linear"
+                app:ael_orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_share_with_individuals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <TextView
+                android:id="@+id/text_copyright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Copyright"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/field_copy_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/button_open_copy_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_down" />
+
+            </RelativeLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/layout_expandable_copy_right"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FFFFFF"
+                app:ael_expanded="false"
+                app:ael_interpolator="linear"
+                app:ael_orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_copy_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_copy_right_other"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/field_copy_right_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter copyright here"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_shot_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Shot type"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/field_shot_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/button_open_shot_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_down" />
+
+            </RelativeLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/layout_expandable_shot_type"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FFFFFF"
+                app:ael_expanded="false"
+                app:ael_interpolator="linear"
+                app:ael_orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_shot_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+            <TextView
+                android:id="@+id/text_stream_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Stream type"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/field_stream_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/button_open_stream_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_down" />
+
+            </RelativeLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/layout_expandable_stream_type"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FFFFFF"
+                app:ael_expanded="false"
+                app:ael_interpolator="linear"
+                app:ael_orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_stream_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+            <TextView
+                android:id="@+id/text_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Link"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/field_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:textColor="@color/color_grey_dark" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Select Exchanges"
+                android:textSize="16sp" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_russia_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:text="Russia Today" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_bbc_uk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:checked="true"
+                android:text="BBC UK" />
+
+
+            <TextView
+                android:id="@+id/text_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Location"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/field_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:textColor="@color/color_grey_dark" />
+
+            </RelativeLayout>
+
+            <com.mapbox.mapboxsdk.maps.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Tags"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/layout_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:minHeight="40dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/field_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/list_tags"
+                    android:backgroundTint="@color/color_white" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="4dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_meta_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Description (Dope sheet)"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:minHeight="40dp"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/field_meta_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_restrictions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Restrictions"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:minHeight="80dp"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/field_restrictions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stream source"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/selector_rounded_button_stroke_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/field_stream_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@id/image_location"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/button_stream_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_down"
+                    android:tint="@color/color_main_blue" />
+
+            </RelativeLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/layout_expandable_stream_source"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FFFFFF"
+                app:ael_expanded="false"
+                app:ael_interpolator="linear"
+                app:ael_orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_stream_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_content_nature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:checked="true"
+                android:text="Contains content of a graphic nature" />
+
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:text="Copyright"-->
+                <!--android:textSize="16sp" />-->
+
+            <!--<RadioGroup-->
+                <!--android:id="@+id/copy_right_radio_group"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_pool"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Pool" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_public"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Public" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_globalm_content"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="GlobalM content" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_cleared"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Cleared" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_host_broadcaster_content"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Host broadcaster content" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_exclusive_with_conditions"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Exclusive with conditions" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_exclusive_for_an_mo"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Exclusive for an MO" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_embargo_with_time_date_stamp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Embargo with time/date stamp" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_embargo_by_country"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Embargo by country" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_broadcast_only"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Broadcast only" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_button_digital_only"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Digital only" />-->
+
+
+            <!--</RadioGroup>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Restrictions"
+                android:textSize="16sp" />
+
+
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_apply_restrictions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:text="Apply restrictions" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_anyone_can_purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:checked="true"
+                android:text="Anyone can purchase" />
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/text_time_date"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="Time/Date"-->
+            <!--android:textSize="16sp" />-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="@drawable/selector_rounded_button_stroke_grey"-->
+            <!--android:padding="10dp">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/field_date"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:textColor="@color/color_grey_dark" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/image_time_date"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/ic_plan_event" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/text_description"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:text="Description"-->
+            <!--android:textSize="16sp" />-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/field_description"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/selector_rounded_button_stroke_grey"-->
+            <!--android:padding="10dp"-->
+            <!--android:textColor="@color/color_grey_dark"-->
+            <!--android:textSize="14sp" />-->
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/text_streaming_option"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:text="Streaming Option"-->
+            <!--android:textSize="16sp" />-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/selector_rounded_button_stroke_grey"-->
+            <!--android:padding="10dp">-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/edt_stream_option"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:textColor="@color/color_grey_dark" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/image_stream_option"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/ic_arrow_down" />-->
+
+
+            <!--</RelativeLayout>-->
+
+            <!--<com.github.aakira.expandablelayout.ExpandableRelativeLayout-->
+            <!--android:id="@+id/layout_expandable_streaming_option"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:background="#FFFFFF"-->
+            <!--app:ael_expanded="false"-->
+            <!--app:ael_interpolator="linear"-->
+            <!--app:ael_orientation="vertical">-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/list_streaming_option"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+
+            <!--</com.github.aakira.expandablelayout.ExpandableRelativeLayout>-->
+
+            <!--<TextView-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="enter keywords separated with comma"-->
+            <!--android:textSize="12sp" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#0e63c9"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pricing"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/text_add_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Add New"
+                        android:textColor="#00ce7e" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_pricing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/layout_new_pricing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_rounded_button_stroke_grey_background_withe"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/text_price_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="Package Name"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/image_price_add"
+                            android:background="@drawable/selector_rounded_button_stroke_grey"
+                            android:gravity="center_vertical"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp">
+
+                            <TextView
+                                android:id="@+id/price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$"
+                                android:textSize="16sp" />
+
+
+                            <EditText
+                                android:id="@+id/field_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/price"
+                                android:background="@android:color/transparent"
+                                android:hint="0"
+                                android:inputType="number"
+                                android:textSize="16sp" />
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/image_price_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_text_add"
+                            android:tint="@color/color_main_blue" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_advanced"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#F2F2F2"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="20dp"
+                android:text="Advanced Rights Management"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Exclude specific media outlets"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_exclude_specific_media_outlets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_rounded_button_stroke_grey"
+                    android:minHeight="40dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/field_specific_media_outlets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/list_specific_media_outlets"
+                        android:backgroundTint="@color/color_white" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_specific_media_outlets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Restrict by Tag"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_restrict_by_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_rounded_button_stroke_grey"
+                    android:minHeight="40dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/field_restrict_by_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/list_restrict_by_tag"
+                        android:backgroundTint="@color/color_white" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_restrict_by_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="8dp">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Timezone"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/selector_rounded_button_stroke_grey"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/field_time_zone_advanced"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@id/image_location"
+                        android:background="@android:color/transparent" />
+
+                    <ImageView
+                        android:id="@+id/image_time_zone_advanced"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_down"
+                        android:tint="@color/color_main_blue" />
+
+                </RelativeLayout>
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/layout_expandable_timezone_advancedlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#F2F2F2"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="linear"
+                    app:ael_orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_timezone_advanced"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/selector_rounded_button_stroke_grey"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/field_time_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/color_grey_dark" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_date" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Time" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/selector_rounded_button_stroke_grey"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/field_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/color_grey_dark" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/text_enter_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Enter/Select an area on the map to apply excuslions"
+                    android:textSize="16sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/selector_rounded_button_stroke_grey"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/field_enter_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:inputType="text"
+                        android:textColor="@color/color_grey_dark" />
+
+                </RelativeLayout>
+
+                <com.mapbox.mapboxsdk.maps.MapView
+                    android:id="@+id/map_view_advanced"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp" />
+
+
+                <RadioGroup
+                    android:id="@+id/radio_group_advanced"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:button="@drawable/radiobutton_selector"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Exclude specific media outlets within selected area" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/radiobutton_selector"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Include specific media outlets within selected area" />
+
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_upload"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/selector_rounded_button_green"
+            android:text="Create Event Now"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</ScrollView>

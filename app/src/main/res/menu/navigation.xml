@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="" />
+
+    <item
+        android:id="@+id/content_summary"
+        android:icon="@drawable/ic_summary"
+        android:title="" />
+
+    <item
+
+        android:id="@+id/contacts"
+        android:icon="@drawable/ic_contact_white"
+        android:title="" />
+
+    <item
+        android:id="@+id/assignments"
+        android:icon="@drawable/ic_assignment"
+        android:title="" />
+
+    <item
+        android:id="@+id/channels"
+        android:icon="@drawable/ic_message_white"
+        android:title="" />
+
+</menu>
